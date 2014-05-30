@@ -8,8 +8,8 @@ PKG="com/cagnosolutions/cei"
 APP="app"
 
 # setup github info
-GITUSER=""
-GITPASS=""
+GITUSER="USER"
+GITPASS="PASS"
 RESOURCE="spring-boot-setup"
 
 # get main resources
@@ -64,6 +64,12 @@ echo ":::initializing base templates folder structure"
 mkdir src/main/resources/templates
 mkdir src/main/resources/templates/user
 mkdir src/main/resources/templates/admin
+
+# cleanup
+echo ":::cleaning up..."
+rm -rf $RESOURCE
+PKG=`echo $PKG | sed -e "s/\//./g"`
+find . -name "*.java" -print0 | xargs -0 sed -i "" -e "s/\$\P\A\C\K\A\G\E/$PKG/g"
 
 # done
 echo ":::done!"
