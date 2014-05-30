@@ -1,5 +1,6 @@
 #!/bin/bash
 # spring boot base configuration
+# copyright scott cagno, 2014
 
 echo ":::configuring..." 
 
