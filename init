@@ -1,0 +1,69 @@
+#!/bin/bash
+# spring boot base configuration
+
+echo ":::configuring..." 
+
+# setup base 
+PKG="com/cagnosolutions/cei"
+APP="app"
+
+# setup github info
+GITUSER=""
+GITPASS=""
+RESOURCE="spring-boot-setup"
+
+# get main resources
+echo ":::getting main resource files..." 
+git clone https://$GITUSER:$GITPASS@github.com/$GITUSER/$RESOURCE.git
+
+# init build file
+echo ":::initializing build file..." 
+cp $RESOURCE/build.gradle .
+
+# init main entry point
+echo ":::initializing main entry sources..." 
+mkdir -p src/main/java/$PKG/springboot/$APP
+cp $RESOURCE/App.java src/main/java/$PKG/springboot/$APP
+
+# init base config sources
+echo ":::initializing base config sources..." 
+mkdir src/main/java/$PKG/springboot/$APP/config
+cp $RESOURCE/*Config.java src/main/java/$PKG/springboot/$APP/config
+
+# init base controller sources
+echo ":::initializing base controller sources..." 
+mkdir src/main/java/$PKG/springboot/$APP/controller
+cp $RESOURCE/*Controller.java src/main/java/$PKG/springboot/$APP/controller
+
+# init base service sources
+echo ":::initializing base service sources..." 
+mkdir src/main/java/$PKG/springboot/$APP/service
+cp $RESOURCE/*Service.java src/main/java/$PKG/springboot/$APP/service
+
+# init base data access sources
+echo ":::initializing base data access sources..." 
+mkdir src/main/java/$PKG/springboot/$APP/data
+cp $RESOURCE/*Repository.java src/main/java/$PKG/springboot/$APP/data
+
+# init base domain model sources
+echo ":::initializing base domain model sources..." 
+mkdir src/main/java/$PKG/springboot/$APP/domain
+cp $RESOURCE/Users.java $RESOURCE/Groups.java $RESOURCE/Account.java src/main/java/$PKG/springboot/$APP/domain
+
+# initialize main resource structure
+echo ":::initializing base resources folder structure..."
+mkdir -p src/main/resources
+mkdir src/main/resources/static
+mkdir src/main/resources/static/css
+mkdir src/main/resources/static/js
+mkdir src/main/resources/static/img
+mkdir src/main/resources/static/fonts
+
+# initialize main templating structure
+echo ":::initializing base templates folder structure"
+mkdir src/main/resources/templates
+mkdir src/main/resources/templates/user
+mkdir src/main/resources/templates/admin
+
+# done
+echo ":::done!"
