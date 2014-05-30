@@ -1,4 +1,4 @@
-package $PACKAGE
+package $PACKAGE;
 
 @Configuration
 @ComponentScan
