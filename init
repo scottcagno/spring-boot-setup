@@ -54,17 +54,12 @@ cp $RESOURCE/Users.java $RESOURCE/Groups.java $RESOURCE/Account.java src/main/ja
 echo ":::initializing base resources folder structure..."
 mkdir -p src/main/resources
 cp $RESOURCE/*.properties src/main/resources
-mkdir src/main/resources/static
-mkdir src/main/resources/static/css
-mkdir src/main/resources/static/js
-mkdir src/main/resources/static/img
-mkdir src/main/resources/static/fonts
+cp -r $RESOURCE/static src/main/resources
 
 # initialize main templating structure
 echo ":::initializing base templates folder structure"
 mkdir src/main/resources/templates
-mkdir src/main/resources/templates/user
-mkdir src/main/resources/templates/admin
+cp -r $RESOURCE/templates src/main/resources
 
 # adding libs to eclipse classpath
 gradle eclipse
