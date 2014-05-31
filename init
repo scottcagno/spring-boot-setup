@@ -4,7 +4,7 @@
 echo ":::configuring..." 
 
 # setup base 
-PKG="com/cagnosolutions/cei"
+PKG="com/cagnosolutions/cei/springboot"
 APP="app"
 
 # setup github info
