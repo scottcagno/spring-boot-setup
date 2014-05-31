@@ -19,7 +19,6 @@ git clone https://$GITUSER:$GITPASS@github.com/$GITUSER/$RESOURCE.git
 # init build file and properties
 echo ":::initializing build file, and *.properties files..." 
 cp $RESOURCE/build.gradle .
-cp $RESOURCE/*.properties .
 
 # init main entry point
 echo ":::initializing main entry sources..." 
@@ -54,6 +53,7 @@ cp $RESOURCE/Users.java $RESOURCE/Groups.java $RESOURCE/Account.java src/main/ja
 # initialize main resource structure
 echo ":::initializing base resources folder structure..."
 mkdir -p src/main/resources
+cp $RESOURCE/*.properties src/main/resources
 mkdir src/main/resources/static
 mkdir src/main/resources/static/css
 mkdir src/main/resources/static/js
