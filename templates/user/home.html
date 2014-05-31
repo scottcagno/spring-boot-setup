@@ -43,7 +43,7 @@
 		<!-- content -->
 		<div id="content" class="container">
 			<div class="jumbotron text-left">
-				<h1>Welcome. <small>It's nice to see you user.</small></h1>
+				<h1>Welcome back. <small th:text="'Logged in as ' + ${#httpServletRequest.remoteUser} + '.'"></small></h1>
 			</div>
 		</div>
 

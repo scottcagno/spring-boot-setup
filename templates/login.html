@@ -43,13 +43,17 @@
 		<!-- content -->
 		<div class="container">
 			<div class="col-sm-offset-4 col-sm-4">
-				<legend>Login</legend>				
-				<form role="form">
+				<legend>Login</legend>
+				<div th:if="${param.error}" class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					Incorrect username or password
+				</div>			
+				<form role="form" method="post" th:action="@{/login}">
 					<div class="form-group">
-						<input type="text" id="user" name="user" class="form-control" placeholder="Username" required="true"/>
+						<input type="text" id="user" name="username" class="form-control" placeholder="Username" required="true" autofocus="true"/>
 					</div>
 					<div class="form-group">
-						<input type="password" id="pass" name="pass" class="form-control" placeholder="Password" required="true"/>
+						<input type="password" id="pass" name="password" class="form-control" placeholder="Password" required="true"/>
 					</div>				
 					<button class="btn btn-md btn-primary btn-block" type="submit">Login</button>
 				</form>

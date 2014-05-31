@@ -45,7 +45,9 @@
 			<div class="jumbotron">
 				<h1>Doh!<small> There has been an exception.</small></h1>
 				<p>No, not that kind of exception. Nevermind. Now go about your business.</p>
-				<pre class="pre-scrollable">stacktrace goes here...</pre>				
+				<pre th:text="${exception}" class="pre-scrollable">
+					Sorry, no information could be provided
+				</pre>				
 			</div>
 		</div>
 

@@ -1,0 +1,2 @@
+#!/bin/bash
+clear; gradle clean build; clear; java -jar build/libs/springboot.jar

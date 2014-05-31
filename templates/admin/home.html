@@ -43,7 +43,7 @@
 		<!-- content -->
 		<div id="content" class="container">
 			<div class="jumbotron text-left">
-				<h1>Administrative Console. <small>timestamp</small></h1>
+				<h1>Admin console. <small th:text="'Logged in as ' + ${#httpServletRequest.remoteUser} + '.'"></small></h1>
 			</div>
 		</div>
 

@@ -48,7 +48,7 @@ cp $RESOURCE/*Repository.java src/main/java/$PKG/$APP/data
 # init base domain model sources
 echo ":::initializing base domain model sources..." 
 mkdir src/main/java/$PKG/$APP/domain
-cp $RESOURCE/Users.java $RESOURCE/Groups.java $RESOURCE/Account.java src/main/java/$PKG/$APP/domain
+cp $RESOURCE/User.java src/main/java/$PKG/$APP/domain
 
 # initialize main resource structure
 echo ":::initializing base resources folder structure..."
@@ -73,3 +73,8 @@ find . -name "*.java" -print0 | xargs -0 sed -i "" -e "s/\$\P\A\C\K\A\G\E/$PKG\.
 
 # done
 echo ":::done!"
+
+# running
+echo ":::running..."
+clear; gradle clean build; clear; java -jar build/libs/springboot.jar
+canberra-gtk-play -l 3 --file=/usr/share/sounds/ubuntu/stereo/bell.ogg
