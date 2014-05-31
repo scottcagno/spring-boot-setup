@@ -1,6 +1,5 @@
 #!/bin/bash
 # spring boot base configuration
-# copyright scott cagno, 2014
 
 echo ":::configuring..." 
 
@@ -9,8 +8,8 @@ PKG="com/cagnosolutions/cei"
 APP="app"
 
 # setup github info
-GITUSER="USER"
-GITPASS="PASS"
+GITUSER="user"
+GITPASS="pass"
 RESOURCE="spring-boot-setup"
 
 # get main resources
@@ -23,33 +22,33 @@ cp $RESOURCE/build.gradle .
 
 # init main entry point
 echo ":::initializing main entry sources..." 
-mkdir -p src/main/java/$PKG/springboot/$APP
-cp $RESOURCE/App.java src/main/java/$PKG/springboot/$APP
+mkdir -p src/main/java/$PKG/$APP
+cp $RESOURCE/App.java src/main/java/$PKG/$APP
 
 # init base config sources
 echo ":::initializing base config sources..." 
-mkdir src/main/java/$PKG/springboot/$APP/config
-cp $RESOURCE/*Config.java src/main/java/$PKG/springboot/$APP/config
+mkdir src/main/java/$PKG/$APP/config
+cp $RESOURCE/*Config.java src/main/java/$PKG/$APP/config
 
 # init base controller sources
 echo ":::initializing base controller sources..." 
-mkdir src/main/java/$PKG/springboot/$APP/controller
-cp $RESOURCE/*Controller.java src/main/java/$PKG/springboot/$APP/controller
+mkdir src/main/java/$PKG/$APP/controller
+cp $RESOURCE/*Controller.java src/main/java/$PKG/$APP/controller
 
 # init base service sources
 echo ":::initializing base service sources..." 
-mkdir src/main/java/$PKG/springboot/$APP/service
-cp $RESOURCE/*Service.java src/main/java/$PKG/springboot/$APP/service
+mkdir src/main/java/$PKG/$APP/service
+cp $RESOURCE/*Service.java src/main/java/$PKG/$APP/service
 
 # init base data access sources
 echo ":::initializing base data access sources..." 
-mkdir src/main/java/$PKG/springboot/$APP/data
-cp $RESOURCE/*Repository.java src/main/java/$PKG/springboot/$APP/data
+mkdir src/main/java/$PKG/$APP/data
+cp $RESOURCE/*Repository.java src/main/java/$PKG/$APP/data
 
 # init base domain model sources
 echo ":::initializing base domain model sources..." 
-mkdir src/main/java/$PKG/springboot/$APP/domain
-cp $RESOURCE/Users.java $RESOURCE/Groups.java $RESOURCE/Account.java src/main/java/$PKG/springboot/$APP/domain
+mkdir src/main/java/$PKG/$APP/domain
+cp $RESOURCE/Users.java $RESOURCE/Groups.java $RESOURCE/Account.java src/main/java/$PKG/$APP/domain
 
 # initialize main resource structure
 echo ":::initializing base resources folder structure..."
@@ -69,6 +68,7 @@ mkdir src/main/resources/templates/admin
 # cleanup
 echo ":::cleaning up..."
 rm -rf $RESOURCE
+
 PKG=`echo $PKG | sed -e "s/\//./g"`
 find . -name "*.java" -print0 | xargs -0 sed -i "" -e "s/\$\P\A\C\K\A\G\E/$PKG/g"
 
