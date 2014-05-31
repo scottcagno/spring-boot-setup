@@ -1,5 +1,11 @@
 package $PACKAGE.controller;
 
+import java.util.Date;
+import javax.servlet.http.HttpServletRequest;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.ModelAndView;
+
 @ControllerAdvice
 public class ExceptionController {
 	public static final String DEFAULT_ERROR_VIEW = "exception";
