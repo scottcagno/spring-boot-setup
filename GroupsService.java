@@ -1,5 +1,9 @@
 package $PACKAGE.service;
 
+import java.util.List;
+import javax.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import $PACKAGE.data.GroupsRepository;
 import $PACKAGE.domain.Groups;
 
@@ -11,11 +15,11 @@ public class GroupsService {
 	private GroupsRepository dao;
 	
 	public void insert(Groups groups){
-		dao.save(users);
+		dao.save(groups);
 	}
 
 	public void update(Groups groups){
-		dao.save(users);
+		dao.save(groups);
 	}
 
 	public void delete(Groups groups){
@@ -26,7 +30,7 @@ public class GroupsService {
 		return dao.findAll();
 	}
 
-	public Users findById(Long id){
+	public Groups findById(Long id){
 		return dao.findOne(id);
 	}
 }
