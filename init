@@ -16,9 +16,10 @@ RESOURCE="spring-boot-setup"
 echo ":::getting main resource files..." 
 git clone https://$GITUSER:$GITPASS@github.com/$GITUSER/$RESOURCE.git
 
-# init build file
-echo ":::initializing build file..." 
+# init build file and properties
+echo ":::initializing build file, and *.properties files..." 
 cp $RESOURCE/build.gradle .
+cp $RESOURCE/*.properties .
 
 # init main entry point
 echo ":::initializing main entry sources..." 
