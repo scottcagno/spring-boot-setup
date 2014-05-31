@@ -5,7 +5,7 @@ echo ":::configuring..."
 
 # setup base 
 APP="app"
-PKG="com/cagnosolutions/cei/springboot/$APP"
+PKG="com/cagnosolutions/cei/springboot"
 
 
 # setup github info
@@ -71,7 +71,7 @@ echo ":::cleaning up..."
 rm -rf $RESOURCE
 
 PKG=`echo $PKG | sed -e "s/\//./g"`
-find . -name "*.java" -print0 | xargs -0 sed -i "" -e "s/\$\P\A\C\K\A\G\E/$PKG/g"
+find . -name "*.java" -print0 | xargs -0 sed -i "" -e "s/\$\P\A\C\K\A\G\E/$PKG\/$APP/g"
 
 # done
 echo ":::done!"
