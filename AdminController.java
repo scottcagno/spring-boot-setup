@@ -1,4 +1,4 @@
-package com.cagnosolutions.cei.springboot.app.controller;
+package $PACKAGE.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cagnosolutions.cei.springboot.app.domain.User;
-import com.cagnosolutions.cei.springboot.app.service.UserService;
+import $PACKAGE.domain.User;
+import $PACKAGE.service.UserService;
 
 @Controller
 public class AdminController {
