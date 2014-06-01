@@ -23,7 +23,8 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value={"/admin", "/admin/home"}, method=RequestMethod.GET)
-	public String adminHomeHandler() {
+	public String adminHomeHandler(Model model) {
+		model.addAttribute("users", userService.findAll());
 		return "admin/home";
 	}
 }
